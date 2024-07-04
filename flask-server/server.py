@@ -1,3 +1,6 @@
+#./.venv/Scripts/activate
+# python -m venv .venv
+
 from flask import Flask
 
 app = Flask(__name__)
