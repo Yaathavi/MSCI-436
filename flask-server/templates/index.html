@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniMatch Survey</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+      <h2 class="text-2xl font-bold mb-4">UniMatch Survey</h2>
+      <form
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        method="POST"
+        action="/getRankings"
+      >
+        <!-- Name field -->
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <!-- Email field -->
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <!-- Field of Study -->
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="fieldOfStudy"
+          >
+            Preferred Field of Study
+          </label>
+          <input
+            id="fieldOfStudy"
+            name="fieldOfStudy"
+            type="text"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <!-- Tuition field -->
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="tuition"
+          >
+            Tuition Cost per Year (CAD)
+          </label>
+          <input
+            id="tuition"
+            name="tuition"
+            type="number"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <!-- Average field -->
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="average"
+          >
+            Minimum Admission Average Required
+          </label>
+          <input
+            id="average"
+            name="average"
+            type="number"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <!-- Tuition Calculation Preference -->
+        <div class="mb-4">
+          <p class="block text-gray-700 text-sm font-bold mb-2">
+            Tuition Payment Preference:
+          </p>
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              name="tuitionCalc"
+              value="saveMoney"
+              class="form-radio"
+            />
+            <span class="ml-2">Prefer to save money</span>
+          </label>
+          <label class="inline-flex items-center ml-4">
+            <input
+              type="radio"
+              name="tuitionCalc"
+              value="spendMoney"
+              class="form-radio"
+            />
+            <span class="ml-2">Willing to spend up to the limit</span>
+          </label>
+        </div>
+
+        <!-- Average Calculation Preference -->
+        <div class="mb-4">
+          <p class="block text-gray-700 text-sm font-bold mb-2">
+            Admission Average Strategy:
+          </p>
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              name="averageCalc"
+              value="easy"
+              class="form-radio"
+            />
+            <span class="ml-2">Higher chance of acceptance</span>
+          </label>
+          <label class="inline-flex items-center ml-4">
+            <input
+              type="radio"
+              name="averageCalc"
+              value="competitive"
+              class="form-radio"
+            />
+            <span class="ml-2">Match my average (competitive)</span>
+          </label>
+        </div>
+
+        <!-- Weights for various factors (satisfaction, tuition, etc.) -->
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="w_satis"
+          >
+            Weight for Satisfaction Importance (1-5)
+          </label>
+          <input
+            id="w_satis"
+            name="w_satis"
+            type="number"
+            min="1"
+            max="5"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="w_tuition"
+          >
+            Weight for Tuition Cost Importance (1-5)
+          </label>
+          <input
+            id="w_tuition"
+            name="w_tuition"
+            type="number"
+            min="1"
+            max="5"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="w_average"
+          >
+            Weight for Admission Average Importance (1-5)
+          </label>
+          <input
+            id="w_average"
+            name="w_average"
+            type="number"
+            min="1"
+            max="5"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="w_employ"
+          >
+            Weight for Employment Rate Importance (1-5)
+          </label>
+          <input
+            id="w_employ"
+            name="w_employ"
+            type="number"
+            min="1"
+            max="5"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="w_retention"
+          >
+            Weight for Retention Rate Importance (1-5)
+          </label>
+          <input
+            id="w_retention"
+            name="w_retention"
+            type="number"
+            min="1"
+            max="5"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
