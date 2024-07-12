@@ -36,7 +36,7 @@ Ensure you have the following installed:
 
    ```bash
    git clone <repository-url>
-   cd <repository-directory>
+   cd flask-server
 
 
 2. **Create and Activate Virtual Environment**
