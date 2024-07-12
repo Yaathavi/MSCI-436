@@ -1,23 +1,4 @@
-# MSCI436
-
-# UniMatch Decision Support System
-
-Welcome to the UniMatch Decision Support System (DSS)! This project provides personalized university and program recommendations based on user preferences, academic goals, and financial situation. The system uses various metrics to rank universities and help prospective students make informed decisions.
-
-## Features
-
-- Personalized university recommendations based on user input
-- Detailed breakdown of utility scores for each criterion
-- Interactive and user-friendly survey form
-- Comprehensive ranking of universities
-
-## Technologies Used
-
-- Python
-- Flask
-- Pandas
-- Openpyxl
-- Tailwind CSS
+# MSCI436 - UniMatch Decision Support System
 
 ## Installation
 
