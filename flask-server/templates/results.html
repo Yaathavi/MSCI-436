@@ -46,8 +46,44 @@
         </ul>
       </div>
       <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h3 class="text-xl font-semibold mb-4">Top 3 University Rankings</h3>
+        <h3 class="text-xl font-semibold mb-4">Top 5 University Rankings</h3>
         {{ tables|safe }}
+      </div>
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h3 class="text-xl font-semibold mb-4">Understanding Utility Scores</h3>
+        <p>
+          The utility scores are calculated to provide a personalized ranking of
+          universities based on your preferences. Each criterion is given a
+          weight based on its importance to you, and the overall utility score
+          is a combination of these weighted scores. Here’s a brief explanation
+          of each criterion:
+        </p>
+        <ul class="list-disc list-inside ml-4">
+          <li>
+            <strong>Overall Utility Score:</strong> The total score combining
+            all criteria weights.
+          </li>
+          <li>
+            <strong>Admission Averages Utility:</strong> Score based on the
+            admission averages.
+          </li>
+          <li>
+            <strong>Tuition Cost Utility:</strong> Score based on the tuition
+            costs.
+          </li>
+          <li>
+            <strong>Satisfaction Utility:</strong> Score based on student
+            satisfaction ratings.
+          </li>
+          <li>
+            <strong>Employment Rate Utility:</strong> Score based on the
+            employment rates of graduates.
+          </li>
+          <li>
+            <strong>Retention Rate Utility:</strong> Score based on the
+            proportion of students who continue their studies (retention rate).
+          </li>
+        </ul>
       </div>
     </div>
   </body>

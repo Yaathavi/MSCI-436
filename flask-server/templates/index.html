@@ -11,39 +11,20 @@
   </head>
   <body class="bg-gray-100">
     <div class="container mx-auto py-8">
-      <h2 class="text-2xl font-bold mb-4">UniMatch Survey</h2>
+      <h2 class="text-2xl font-bold mb-4">Welcome to the UniMatch Survey!</h2>
+      <p class="mb-6">
+        Your inputs are crucial for our Decision Support System (DSS) to provide
+        personalized university and program recommendations. By understanding
+        your academic preferences, financial situation, and priorities, we can
+        tailor our suggestions to match your unique needs and goals.
+      </p>
       <form
         class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         method="POST"
         action="/getRankings"
       >
-        <!-- Name field -->
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-
-        <!-- Email field -->
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-
-        <!-- Field of Study -->
+        <!-- Academic Preferences -->
+        <h3 class="text-xl font-semibold mb-4">Academic Preferences</h3>
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -51,31 +32,23 @@
           >
             Preferred Field of Study
           </label>
-          <input
+          <select
             id="fieldOfStudy"
             name="fieldOfStudy"
-            type="text"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-
-        <!-- Tuition field -->
-        <div class="mb-4">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="tuition"
           >
-            Tuition Cost per Year (CAD)
-          </label>
-          <input
-            id="tuition"
-            name="tuition"
-            type="number"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            <option value="Engineering">Engineering</option>
+            <option value="Kinesiology/Recreation/Physical Education">
+              Kinesiology/Recreation/Physical Education
+            </option>
+            <option value="Nursing">Nursing</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Business and Commerce">Business and Commerce</option>
+            <option value="Education">Education</option>
+            <option value="Fine and Applied Arts">Fine and Applied Arts</option>
+            <option value="Computer Science">Computer Science</option>
+          </select>
         </div>
-
-        <!-- Average field -->
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -87,11 +60,29 @@
             id="average"
             name="average"
             type="number"
+            min="0"
+            max="100"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
 
-        <!-- Tuition Calculation Preference -->
+        <!-- Financial Preferences -->
+        <h3 class="text-xl font-semibold mb-4">Financial Preferences</h3>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="tuition"
+          >
+            Tuition Cost per Year (CAD)
+          </label>
+          <input
+            id="tuition"
+            name="tuition"
+            type="number"
+            min="0"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
         <div class="mb-4">
           <p class="block text-gray-700 text-sm font-bold mb-2">
             Tuition Payment Preference:
@@ -116,7 +107,9 @@
           </label>
         </div>
 
-        <!-- Average Calculation Preference -->
+        <!-- Admission Strategy -->
+        <h3 class="text-xl font-semibold mb-4">Admission Strategy</h3>
+
         <div class="mb-4">
           <p class="block text-gray-700 text-sm font-bold mb-2">
             Admission Average Strategy:
@@ -141,7 +134,12 @@
           </label>
         </div>
 
-        <!-- Weights for various factors (satisfaction, tuition, etc.) -->
+        <!-- Criteria Importance -->
+        <h3 class="text-xl font-semibold mb-4">Criteria Importance</h3>
+        <p class="mb-4">
+          Please rate the importance of each criterion on a scale of 1 to 5, (1:
+          not important, 5: very important).
+        </p>
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -158,7 +156,6 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
-
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -175,7 +172,6 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
-
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -192,7 +188,6 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
-
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -209,7 +204,6 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
-
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
