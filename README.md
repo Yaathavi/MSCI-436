@@ -24,7 +24,8 @@ Ensure you have the following installed:
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/bin/activate  # this is for mac 
+   source venv\Scripts\activate` # On Windows use this 
 
 3. **Install Dependencies**
 
