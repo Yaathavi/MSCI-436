@@ -38,7 +38,7 @@ def scale(df):
 # Sets the utility if they want the highest chance of getting into a program
 def getAvgEasy(program, avg):
     # Clean the dataframe
-    df1 = initAvg(program, avg)
+    df1 = initAvg(program, (avg/100))
 
     # Calculates the utility for each row 
     def calcUtil(diff):
@@ -52,7 +52,7 @@ def getAvgEasy(program, avg):
 # Sets the utility if they want to get into the most competitive program
 def getAvgComp(program, avg):
     # Clean the dataframe
-    df1 = initAvg(program, avg)
+    df1 = initAvg(program, (avg/100))
 
     # Create a function that will calculate the utility
     # If it deviates from the person's average, the utility decreases - they will get recommended a program closest to their average
@@ -66,6 +66,6 @@ def getAvgComp(program, avg):
 
 
 # # TESTING ***************
-# print(getAvgComp("Engineering", 93.4))
+#print(getAvgComp("Engineering", 75))
 
 

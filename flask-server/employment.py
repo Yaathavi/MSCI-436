@@ -27,3 +27,5 @@ def getEmploy(program):
     df1 = scale(df1)
     df1 = df1.reset_index(drop=True)
     return df1
+
+# print(getEmploy("Kinesiology"))

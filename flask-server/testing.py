@@ -6,9 +6,9 @@ from retention import getRetention
 import pandas as pd
 
 # sample data
-program = "Engineering"
-tuition = 8200
-average = 93.4
+program = "Kinesiology/Recreation/Physical Education"
+tuition = 1500
+average = 95
 tuitionCalc = "spendMoney"
 averageCalc = "competitive"
 
@@ -73,8 +73,14 @@ df_combined['TotalUtil'] = df_combined[['W_AvgUtil', 'W_TuitionUtil', 'W_SatisUt
 
 # sort from high to low utility
 df_combined = df_combined.sort_values(by='TotalUtil', ascending=False)
-print(df_combined)
+# print(df_combined)
 
 # turn it into json
 json_result = df_combined[['University', "W_AvgUtil", "W_TuitionUtil", "W_SatisUtil", "W_EmployUtil", "W_RetentionUtil", 'TotalUtil']].to_json(orient='records')
-print(json_result)
+# print(json_result)
+
+
+# data cleaning
+columns_to_keep = ['University','W_AvgUtil', 'W_TuitionUtil', 'W_SatisUtil', 'W_EmployUtil', 'W_RetentionUtil', 'TotalUtil']
+df_data = df_combined[columns_to_keep].copy()
+print(df_data)

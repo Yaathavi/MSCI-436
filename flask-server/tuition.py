@@ -40,14 +40,17 @@ def spendMoney(tuition, program):
     df1["Tuition_Diff"] = df1["Tuition"] - tuition
 
     # Set the utility - decrease as it increases past your budget
-    df1['Utility'] = df1['Tuition_Diff'].apply(lambda x: x if pd.isnull(x) or x > 0 else 0)
+    df1['Utility'] = df1['Tuition_Diff'].apply(lambda x: x if pd.isnull(x) or x > 0 else 1)
 
     min_diff = df1['Utility'].min()
     max_diff = df1['Utility'].max()
-    df1['Utility_MinMaxScaled'] = 1 - ((df1['Utility'] - min_diff) / (max_diff - min_diff))
+    if min_diff != max_diff:
+        df1['Utility_MinMaxScaled'] = 1 - ((df1['Utility'] - min_diff) / (max_diff - min_diff))
+    else:
+        df1['Utility_MinMaxScaled'] = df1["Utility"]
     df1 = df1.reset_index(drop=True)
     return df1
 
 ### Testing
-# df_util = spendMoney(8200, "Engineering")
+# df_util = saveMoney(13000, "Engineering")
 # print(df_util)
