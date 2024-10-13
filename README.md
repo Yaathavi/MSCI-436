@@ -40,8 +40,6 @@ Ensure you have the following installed:
 
 Now visit http://127.0.0.1:5000/ (the terminal will say what it's running on).
 
-Pictures of how the site looks:
-
 <img width="1792" alt="image" src="https://github.com/user-attachments/assets/ea54d0aa-5493-4186-b9be-641828a5e140">
 
 
